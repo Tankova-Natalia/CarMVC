@@ -24,7 +24,7 @@ public class Car {
     @Max(value = 2021, message = "Year of manufacture should be less then 2021")
     @NotNull(message = "Year of manufacture should not be empty")
     private int yearOfManufacture;
-    private CarColor color;
+    //private CarColor color;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @PastOrPresent(message = "Date of registration should be past or present")
     @NotNull(message = "Date of registration should not be empty")
@@ -69,13 +69,13 @@ public class Car {
         this.yearOfManufacture = yearOfManufacture;
     }
 
-   public CarColor getColor() {
+   /*public CarColor getColor() {
         return color;
     }
 
     public void setColor(CarColor color) {
         this.color = color;
-    }
+    }*/
 
      public LocalDate getDateOfRegistration() {
         return dateOfRegistration;
@@ -92,7 +92,7 @@ public class Car {
                 "kind='" + kind + '\'' +
                 ", model='" + model + '\'' +
                 ", yearOfManufacture=" + yearOfManufacture +
-                ", color=" + color +
+                //", color=" + color +
                 ", dateOfRegistration=" + dateOfRegistration +
                 ", generalMileage=" + generalMileage +
                 '}';

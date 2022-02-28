@@ -22,10 +22,10 @@
             <input th:field="*{yearOfManufacture}" type="number" id="yearOfManufacture"/>
             <span th:if="${#fields.hasErrors('yearOfManufacture')}" th:errors="*{yearOfManufacture}" style="color: red" class="error">Name error</span>
             <br/>
-            <label for="color">Color</label>
+            <!--<label for="color">Color</label>
             <select id="color" th:field="*{color}" class="form-control selectpicker">
                 <option th:each="color:${T(model.CarColor).values()}" th:value="${color}" th:text="${color}"></option>
-            </select>
+            </select>-->
            <<br/>
             <label for="dateOfRegistration">Date of registration</label>
             <input th:field="*{dateOfRegistration}"  th:value="java.time.LocalDate" id="dateOfRegistration"/>
