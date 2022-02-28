@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>Enter data:</p>
+    <form th:method="post" th:action="@{/result}" th:object="${car}">
+        <div>
+            <label for="kind">Kind</label>
+            <input th:field="*{kind}" type="text" id="kind"/>
+            <span th:if="${#fields.hasErrors('kind')}" th:errors="*{kind}" style="color: red" class="error">Name error</span>
+            <br/>
+            <model for="model">Model</model>
+            <input th:field="*{model}" type="text" id="model"/>
+            <span th:if="${#fields.hasErrors('model')}" th:errors="*{model}" style="color: red" class="error">Name error</span>
+            <br/>
+            <label for="yearOfManufacture">Year of manufacture</label>
+            <input th:field="*{yearOfManufacture}" type="number" id="yearOfManufacture"/>
+            <span th:if="${#fields.hasErrors('yearOfManufacture')}" th:errors="*{yearOfManufacture}" style="color: red" class="error">Name error</span>
+            <br/>
+            <label for="color">Color</label>
+            <select id="color" th:field="*{color}" class="form-control selectpicker">
+                <option th:each="color:${T(model.CarColor).values()}" th:value="${color}" th:text="${color}"></option>
+            </select>
+           <<br/>
+            <label for="dateOfRegistration">Date of registration</label>
+            <input th:field="*{dateOfRegistration}"  th:value="java.time.LocalDate" id="dateOfRegistration"/>
+            <span th:if="${#fields.hasErrors('dateOfRegistration')}" th:errors="*{dateOfRegistration}" style="color: red" class="error">Name error</span>
+            <br>
+            <label for="generalMileage">General mileage</label>
+            <input th:field="*{generalMileage}"  type="number" id="generalMileage">
+            <span th:if="${#fields.hasErrors('generalMileage')}" th:errors="*{generalMileage}" style="color: red" class="error">Name error</span>
+            <br/>
+            <input type="submit" value="addCar">
+        </div>
+
+    </form>
+
+</div>
+</body>
+</html>
